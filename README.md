@@ -24,5 +24,42 @@ xrp <number>
 ### example
 ![example](https://i.imgur.com/vDRoTav.gif)
 
+### tips
+You can also use the `watch` command in order to have the cli run continuously and stay up to date.
+You can install watch on mac using brew or macports, more details can be found at http://osxdaily.com/2010/08/22/install-watch-command-on-os-x/
+
+example using watch:
+```bash
+watch -d xrp
+
+# output:
+Every 2.0s: xrp
+----------------------------------------------------
+if you find this tool useful feel free to donate some ripple:
+rswJLmNcH6vAXdtWTGK1ad2WTBWBK6xrfw
+----------------------------------------------------
+
+-----------------------------------------------
+  Symbol     Avg Price (USD)    Change (1H)
+-----------------------------------------------
+  XRP        $1.9299            -3.00%
+-----------------------------------------------
+------------------------------
+  Exchange     Price (USD)
+------------------------------
+  BitFinex     $1.9154
+------------------------------
+  Bittrex      $1.9320
+------------------------------
+  Exmo         $2.1100
+------------------------------
+  Hitbtc       $1.9200
+------------------------------
+  Kraken       $1.9700
+------------------------------
+  Poloniex     $1.9120
+------------------------------
+```
+
 if you find this tool useful feel free to donate some ripple
 ```rswJLmNcH6vAXdtWTGK1ad2WTBWBK6xrfw```
