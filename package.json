@@ -1,0 +1,41 @@
+{
+  "name": "xrpcli",
+  "version": "0.0.1",
+  "description": "A cryptocurrency price monitoring tool for XRP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christophior/xrpcli.git"
+  },
+  "bin": {
+    "xrp": "./index.js"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "keywords": [
+    "bitcoin",
+    "crypto",
+    "xrp"
+  ],
+  "author": "Chris Villarreal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/christophior/xrpcli/issues"
+  },
+  "homepage": "https://github.com/christophior/xrpcli#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "cfonts": "^1.1.3",
+    "cli-table2": "^0.2.0",
+    "colors": "^1.1.2",
+    "commander": "^2.11.0",
+    "emojic": "^1.1.12",
+    "humanize-plus": "^1.8.2",
+    "ora": "^1.3.0"
+  }
+}
