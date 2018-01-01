@@ -6,7 +6,7 @@ All data comes from [cryptonator.com](https://cryptonator.com/) APIs.
 
 
 ### installation
-** make sure you have node v6 or higher: https://nodejs.org/dist/latest-v6.x/ **
+**make sure you have node v6 or higher: https://nodejs.org/dist/latest-v6.x/**
 
 ```bash
 npm install -g xrpcli
@@ -15,7 +15,7 @@ npm install -g xrpcli
 ### running
 ```bash
 # gets average price and price on exchanges
-on
+xrp
 
 # gets above info as well as total price for given quantity
 xrp <number> 
