@@ -51,26 +51,30 @@ const spinner = ora('Loading data').start()
 axios.get('https://api.cryptonator.com/api/full/xrp-usd')
 	.then(function (response) {
 		spinner.stop()
-		let data = response.data.ticker,
-			hourChange = parseFloat(data.change*100).toFixed(2);
-			hourChange = hourChange > 0 ? hourChange.green : hourChange.red,
-			summaryRow = [data.base, '$' + parseFloat(data.price).toFixed(4), hourChange + '%'];
-		
-		if (quantity) {
-			summaryRow.push(numberWithCommas(quantity));
-			summaryRow.push('$' + numberWithCommas(parseFloat(quantity * data.price).toFixed(2)));
-		}
+		if (response.data.error && response.data.error !== "") {
+			console.log('Error: ' + response.data.error.red);
+		} else {
+			let data = response.data.ticker,
+				hourChange = parseFloat(data.change*100).toFixed(2);
+				hourChange = hourChange > 0 ? hourChange.green : hourChange.red,
+				summaryRow = [data.base, '$' + parseFloat(data.price).toFixed(4), hourChange + '%'];
 
-		summaryTable.push(summaryRow)
-		
-		data.markets
-			.map(record => {
-				return [record.market, '$' + parseFloat(record.price).toFixed(4)]
-			})
-			.forEach(record => exchangeTable.push(record))
-		
-		console.log(summaryTable.toString())
-		console.log(exchangeTable.toString())
+			if (quantity) {
+				summaryRow.push(numberWithCommas(quantity));
+				summaryRow.push('$' + numberWithCommas(parseFloat(quantity * data.price).toFixed(2)));
+			}
+
+			summaryTable.push(summaryRow)
+			
+			data.markets
+				.map(record => {
+					return [record.market, '$' + parseFloat(record.price).toFixed(4)]
+				})
+				.forEach(record => exchangeTable.push(record))
+			
+			console.log(summaryTable.toString())
+			console.log(exchangeTable.toString())
+		}
 	})
 	.catch(function (error) {
 		spinner.stop()
