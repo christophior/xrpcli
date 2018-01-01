@@ -21,6 +21,8 @@ on
 xrp <number> 
 ```
 
+### example
+![example](https://i.imgur.com/vDRoTav.gif)
 
 if you find this tool useful feel free to donate some ripple
 ```rswJLmNcH6vAXdtWTGK1ad2WTBWBK6xrfw```
