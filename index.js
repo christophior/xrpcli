@@ -5,12 +5,8 @@ const Table = require('cli-table2')
 const colors = require('colors')
 const humanize = require('humanize-plus')
 
-console.log('----------------------------------------------------');
-console.log('if you find this tool useful feel free to donate some ripple:')
-console.log('rswJLmNcH6vAXdtWTGK1ad2WTBWBK6xrfw'.green)
-console.log('----------------------------------------------------\n');
-
-let quantity = process.argv.length > 2 ? process.argv[2] : undefined;
+let symbol = process.argv.length > 2 ? process.argv[2] : 'XRP',
+	quantity = process.argv.length > 3 ? process.argv[3] : undefined;
 
 const tableChars = {
 	'top': '-',
@@ -48,7 +44,7 @@ const summaryTable = new Table({
 	});
 
 const spinner = ora('Loading data').start()
-axios.get('https://api.cryptonator.com/api/full/xrp-usd')
+axios.get(`https://api.cryptonator.com/api/full/${symbol.toLowerCase()}-usd`)
 	.then(function (response) {
 		spinner.stop()
 		if (response.data.error && response.data.error !== "") {

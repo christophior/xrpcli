@@ -1,6 +1,6 @@
-## XRP price ticker CLI
+## coin price ticker CLI
 
-Check XRP's prices, changes on your console.
+Check different crypto prices on your console.
 
 All data comes from [cryptonator.com](https://cryptonator.com/) APIs.
 
@@ -9,20 +9,17 @@ All data comes from [cryptonator.com](https://cryptonator.com/) APIs.
 **make sure you have node v6 or higher: https://nodejs.org/dist/latest-v6.x/**
 
 ```bash
-npm install -g xrpcli
+npm install -g cryptotracker
 ```
 
 ### running
 ```bash
 # gets average price and price on exchanges
-xrp
+coin xrp
 
 # gets above info as well as total price for given quantity
-xrp <number> 
+coin xrp <number> 
 ```
-
-### example
-![example](https://i.imgur.com/vDRoTav.gif)
 
 ### tips
 You can also use the `watch` command in order to have the cli run continuously and stay up to date.

@@ -1,7 +1,7 @@
 {
-  "name": "xrpcli",
-  "version": "1.2.0",
-  "description": "A cryptocurrency price monitoring tool for XRP",
+  "name": "cryptotracker",
+  "version": "1.0.0",
+  "description": "A cryptocurrency price monitoring tool for different cryptos",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/christophior/xrpcli.git"
   },
   "bin": {
-    "xrp": "./index.js"
+    "coin": "./index.js"
   },
   "engines": {
     "node": ">=6.0.0"
