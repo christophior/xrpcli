@@ -39,8 +39,8 @@ const summaryTable = new Table({
 	}),
 	exchangeTable = new Table({
 		chars: tableChars,
-		head: ['Exchange', 'Price (USD)'].map(title => title.yellow),
-		colWidths: [12, 15]
+		head: ['Exchange', 'Price (USD)', 'Value (USD)'].map(title => title.yellow),
+		colWidths: [12, 15, 15]
 	});
 
 const spinner = ora('Loading data').start()
@@ -64,7 +64,7 @@ axios.get(`https://api.cryptonator.com/api/full/${symbol.toLowerCase()}-usd`)
 			
 			data.markets
 				.map(record => {
-					return [record.market, '$' + parseFloat(record.price).toFixed(4)]
+					return [record.market, '$' + parseFloat(record.price).toFixed(4), '$' + numberWithCommas(parseFloat(record.price * quantity).toFixed(2))]
 				})
 				.forEach(record => exchangeTable.push(record))
 			
