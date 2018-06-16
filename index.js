@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const axios = require('axios')
 const ora = require('ora')
-const Table = require('cli-table2')
+const Table = require('cli-table3')
 const colors = require('colors')
 const humanize = require('humanize-plus')
 
@@ -33,7 +33,7 @@ const tableChars = {
 let summaryHead = ['Symbol', 'Avg Price (USD)', 'Change (1H)'];
 if (quantity) {
 	summaryHead.push('Quantity');
-	summaryHead.push('Value');	
+	summaryHead.push('Value');
 }
 
 const summaryTable = new Table({
@@ -65,13 +65,13 @@ axios.get('https://api.cryptonator.com/api/full/xrp-usd')
 			}
 
 			summaryTable.push(summaryRow)
-			
+
 			data.markets
 				.map(record => {
 					return [record.market, '$' + parseFloat(record.price).toFixed(4)]
 				})
 				.forEach(record => exchangeTable.push(record))
-			
+
 			console.log(summaryTable.toString())
 			console.log(exchangeTable.toString())
 		}
