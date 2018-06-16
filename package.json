@@ -1,6 +1,6 @@
 {
   "name": "xrpcli",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A cryptocurrency price monitoring tool for XRP",
   "main": "index.js",
   "scripts": {
